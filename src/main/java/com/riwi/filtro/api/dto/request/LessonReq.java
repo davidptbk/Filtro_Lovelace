@@ -1,6 +1,8 @@
 package com.riwi.filtro.api.dto.request;
 
 
+import java.util.List;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -22,4 +24,6 @@ public class LessonReq {
     private Long class_id;
     @NotNull(message = "El estado de la clase es requerido.")
     private Boolean active;
+    
+    private List<MultimediaReq> multimedias;
 }
