@@ -3,9 +3,9 @@ package com.riwi.filtro.domain.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.riwi.filtro.domain.entities.ClassEntity;
+import com.riwi.filtro.domain.entities.StudentEntity;
 
 @Repository
-public interface ClassRepositories extends JpaRepository<ClassEntity,Long>{
+public interface StudentRepository extends JpaRepository<StudentEntity,Long>{
     
 }

@@ -24,8 +24,8 @@ public class MultimediaReq {
     @NotBlank(message = "The url multimedia is required")
     private String url;
 
-    @NotNull(message = "The state is required")
-    private Boolean active;
     @NotNull(message = "the lesson id in multimedia is required")
     private Long lesson_id;
+    @NotNull(message = "El estado de la clase es requerido.")
+    private Boolean active;
 }

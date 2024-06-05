@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.riwi.filtro.domain.entities.LessonEntity;
 
 @Repository
-public interface LessonRepositorie extends JpaRepository<LessonEntity,Long> {
+public interface LessonRepository extends JpaRepository<LessonEntity,Long> {
     
 }
