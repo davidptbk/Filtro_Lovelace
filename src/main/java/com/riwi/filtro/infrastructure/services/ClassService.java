@@ -10,11 +10,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.riwi.filtro.api.dto.request.ClassReq;
-import com.riwi.filtro.api.dto.request.StudentReq;
 import com.riwi.filtro.api.dto.response.ClassBasicResp;
 import com.riwi.filtro.api.dto.response.ClassGetResp;
-import com.riwi.filtro.api.dto.response.ClassResp;
-import com.riwi.filtro.api.dto.response.ClassToStudentResp;
 import com.riwi.filtro.api.dto.response.StudentBasicResp;
 import com.riwi.filtro.domain.entities.ClassEntity;
 import com.riwi.filtro.domain.entities.StudentEntity;

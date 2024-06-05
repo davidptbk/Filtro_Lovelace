@@ -30,7 +30,7 @@ import lombok.AllArgsConstructor;
 public class ClassController {
     @Autowired
     private final ClassService service;
-@Operation(summary = "Lista todas las clases por nombre o descripción de forma paginada siempre y cuando la clase este activa.", description = "Debes enviar la página, el tamaño de la página, y el nombre o la descripción por la que quieres buscar la clase.")
+@Operation(summary = "List all class for name or description paginated with condition the class is active.", description = "You must submit the page, the size of the page, and the name or description by which you want to search for the class.")
     @GetMapping
     public ResponseEntity<Page<Object>> getAll(
             @RequestParam(defaultValue = "1") int page,
@@ -40,16 +40,16 @@ public class ClassController {
         return ResponseEntity.ok(this.service.getAll(page - 1, size, name, description));
     }
 
-    @ApiResponse(responseCode = "400", description = "Cuando el id no es válido.", content = {
+    @ApiResponse(responseCode = "400", description = "When the id is invalid.", content = {
             @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))
     })
-    @Operation(summary = "Lista una clase por el id específico.", description = "Debes enviar el id de la clase que deseas listar.")
+    @Operation(summary = "Lists a class by specific id.", description = "You must send the id of the class you want to list.")
     @GetMapping(path = "/{id}")
     public ResponseEntity<ClassGetResp> get(@PathVariable Long id) {
         return ResponseEntity.ok(this.service.get(id));
     }
 
-    @Operation(summary = "Crea una clase.", description = "Debes ingresar el nombre, la descripción y el estado de la clase.")
+    @Operation(summary = "Create a class", description = "You must send the name, the description and the state of class.")
     @PostMapping
     public ResponseEntity<ClassBasicResp> create(@Validated @RequestBody ClassReq request){
         return ResponseEntity.ok(this.service.create(request));
