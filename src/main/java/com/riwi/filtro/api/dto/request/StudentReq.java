@@ -24,8 +24,8 @@ public class StudentReq {
     @Email(message = "The email must be a valid email [example@example.com]")
     private String email;
 
-    @NotNull(message = "The state student is required")
-    private Boolean active;
     @NotNull(message = "The class id in student is required")
     private Long class_id;
+    @NotNull(message = "El estado de la clase es requerido.")
+    private Boolean active;
 }

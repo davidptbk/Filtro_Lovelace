@@ -24,8 +24,6 @@ public class ClassReq {
     @NotBlank(message = "The description class is required")
     private String description;
 
-
-    @NotNull(message = "The state is required")
+    @NotNull(message = "El estado de la clase es requerido.")
     private Boolean active;
-
 }

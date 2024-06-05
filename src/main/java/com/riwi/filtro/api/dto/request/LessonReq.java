@@ -22,8 +22,8 @@ public class LessonReq {
     @NotBlank(message = "The content lesson is required")
     private String content;
 
-    @NotNull(message = "The lesson state is required")
-    private Boolean active;
     @NotNull(message = "the class id in lesson is required")
     private Long class_id;
+    @NotNull(message = "El estado de la clase es requerido.")
+    private Boolean active;
 }
