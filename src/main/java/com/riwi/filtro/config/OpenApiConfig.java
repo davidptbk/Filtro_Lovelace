@@ -9,7 +9,7 @@ import io.swagger.v3.oas.annotations.info.Info;
  * Configuracion de swagger
  */
 @Configuration
-@OpenAPIDefinition(info = @Info(title = "Api para configuracion de cursos estudiantes y lecciones de Riwi", version = "1.0", description = "Documentación api de filtro lovelace"))
+@OpenAPIDefinition(info = @Info(title = "Api to config of class students and lessons of Riwi", version = "1.0", description = "Api documentarion of filter lovelace clan"))
 public class OpenApiConfig {
 
 }
