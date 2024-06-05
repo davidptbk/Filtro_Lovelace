@@ -1,4 +1,4 @@
-package com.riwi.filtro.Util.exceptions;
+package com.riwi.filtro.utils.exceptions;
 
 public class BadRequestException extends RuntimeException{
     public BadRequestException(String message) {

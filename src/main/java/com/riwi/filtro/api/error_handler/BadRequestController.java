@@ -18,34 +18,23 @@ import com.riwi.filtro.api.dto.errors.ErrorsResp;
 @RestControllerAdvice
 @ResponseStatus(code = HttpStatus.BAD_REQUEST)
 public class BadRequestController {
-     /*
-     * MethodArgumentNotValidException es la excepción que activa la libreria 
-     * de validación
-     */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public BaseErrorResp handleBadRequest(MethodArgumentNotValidException exception){
+        List<Map<String, String>> errors = new ArrayList<>();
 
-        List<Map<String,String>> errors = new ArrayList<>();
-
-        /*
-         * getBindingResult obtiene los resultados con el fiel y el error
-         * getFieldErrors obtiene la lista de los nombres del campo del error 
-         */
         exception.getBindingResult().getFieldErrors().forEach(e -> {
-            Map<String,String> error = new HashMap<>();
-            error.put("error", e.getDefaultMessage()); //agregar al map el error
-            error.put("field", e.getField()); //agregar al map en donde ocurrió el error
+            Map<String, String> error = new HashMap<>();
+            error.put("Error",e.getDefaultMessage());
+            error.put("Error",e.getField());
             errors.add(error);
         });
 
-
         return ErrorsResp.builder()
-                .code(HttpStatus.BAD_REQUEST.value()) //400
-                .status(HttpStatus.BAD_REQUEST.name()) //BAD_REQUEST
-                .errors(errors) // [ { "field": "mal", "error": "mal"} ]
+                .code(HttpStatus.BAD_REQUEST.value())
+                .status(HttpStatus.BAD_REQUEST.name())
+                .errors(errors)
                 .build();
     }
-
 
     @ExceptionHandler(BadRequestException.class)
     public BaseErrorResp handleError(BadRequestException exception){
@@ -55,14 +44,10 @@ public class BadRequestController {
         
         error.put("id", exception.getMessage());
 
-        errors.add(error);
-
-        
         return ErrorsResp.builder()
-                .code(HttpStatus.BAD_REQUEST.value()) //400
-                .status(HttpStatus.BAD_REQUEST.name()) //BAD_REQUEST
-                .errors(errors) // [ { "field": "mal", "error": "mal"} ]
+                .code(HttpStatus.NOT_FOUND.value())
+                .status(HttpStatus.NOT_FOUND.name())
+                .errors(errors)
                 .build();
-
     }
 }
